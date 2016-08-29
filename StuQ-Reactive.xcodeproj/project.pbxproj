@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		260443A01D71F15300BFEA47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2604439F1D71F15300BFEA47 /* AppDelegate.swift */; };
-		260443A21D71F15300BFEA47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260443A11D71F15300BFEA47 /* ViewController.swift */; };
+		260443A21D71F15300BFEA47 /* TapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260443A11D71F15300BFEA47 /* TapViewController.swift */; };
 		260443A51D71F15300BFEA47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260443A31D71F15300BFEA47 /* Main.storyboard */; };
 		260443A71D71F15300BFEA47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260443A61D71F15300BFEA47 /* Assets.xcassets */; };
 		260443AA1D71F15300BFEA47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260443A81D71F15300BFEA47 /* LaunchScreen.storyboard */; };
 		260443B31D71F1F300BFEA47 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260443B11D71F1F300BFEA47 /* RxSwift.framework */; };
 		260443B41D71F1F300BFEA47 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260443B21D71F1F300BFEA47 /* RxCocoa.framework */; };
 		260443B81D71F8B300BFEA47 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260443B71D71F8B300BFEA47 /* SnapKit.framework */; };
+		260443BA1D71F8D400BFEA47 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260443B91D71F8D400BFEA47 /* LayoutViewController.swift */; };
+		26C1B93D1D7479BA00C3D27C /* TextBindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1B93C1D7479BA00C3D27C /* TextBindViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2604439C1D71F15300BFEA47 /* StuQ-Reactive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StuQ-Reactive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2604439F1D71F15300BFEA47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		260443A11D71F15300BFEA47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		260443A11D71F15300BFEA47 /* TapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapViewController.swift; sourceTree = "<group>"; };
 		260443A41D71F15300BFEA47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		260443A61D71F15300BFEA47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260443A91D71F15300BFEA47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		260443B11D71F1F300BFEA47 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		260443B21D71F1F300BFEA47 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		260443B71D71F8B300BFEA47 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		260443B91D71F8D400BFEA47 /* LayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutViewController.swift; sourceTree = "<group>"; };
+		26C1B93C1D7479BA00C3D27C /* TextBindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBindViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				2604439F1D71F15300BFEA47 /* AppDelegate.swift */,
-				260443A11D71F15300BFEA47 /* ViewController.swift */,
+				260443A11D71F15300BFEA47 /* TapViewController.swift */,
+				260443B91D71F8D400BFEA47 /* LayoutViewController.swift */,
+				26C1B93C1D7479BA00C3D27C /* TextBindViewController.swift */,
 				260443A31D71F15300BFEA47 /* Main.storyboard */,
 				260443A61D71F15300BFEA47 /* Assets.xcassets */,
 				260443A81D71F15300BFEA47 /* LaunchScreen.storyboard */,
@@ -167,7 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				260443A21D71F15300BFEA47 /* ViewController.swift in Sources */,
+				26C1B93D1D7479BA00C3D27C /* TextBindViewController.swift in Sources */,
+				260443A21D71F15300BFEA47 /* TapViewController.swift in Sources */,
+				260443BA1D71F8D400BFEA47 /* LayoutViewController.swift in Sources */,
 				260443A01D71F15300BFEA47 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
