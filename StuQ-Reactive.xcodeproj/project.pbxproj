@@ -17,6 +17,7 @@
 		260443B81D71F8B300BFEA47 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260443B71D71F8B300BFEA47 /* SnapKit.framework */; };
 		260443BA1D71F8D400BFEA47 /* LayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260443B91D71F8D400BFEA47 /* LayoutViewController.swift */; };
 		26C1B93D1D7479BA00C3D27C /* TextBindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1B93C1D7479BA00C3D27C /* TextBindViewController.swift */; };
+		26C1B93F1D74A08D00C3D27C /* OrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1B93E1D74A08D00C3D27C /* OrderTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		260443B71D71F8B300BFEA47 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		260443B91D71F8D400BFEA47 /* LayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutViewController.swift; sourceTree = "<group>"; };
 		26C1B93C1D7479BA00C3D27C /* TextBindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextBindViewController.swift; sourceTree = "<group>"; };
+		26C1B93E1D74A08D00C3D27C /* OrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				260443A61D71F15300BFEA47 /* Assets.xcassets */,
 				260443A81D71F15300BFEA47 /* LaunchScreen.storyboard */,
 				260443AB1D71F15300BFEA47 /* Info.plist */,
+				26C1B93E1D74A08D00C3D27C /* OrderTableViewController.swift */,
 			);
 			path = "StuQ-Reactive";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C1B93D1D7479BA00C3D27C /* TextBindViewController.swift in Sources */,
+				26C1B93F1D74A08D00C3D27C /* OrderTableViewController.swift in Sources */,
 				260443A21D71F15300BFEA47 /* TapViewController.swift in Sources */,
 				260443BA1D71F8D400BFEA47 /* LayoutViewController.swift in Sources */,
 				260443A01D71F15300BFEA47 /* AppDelegate.swift in Sources */,
