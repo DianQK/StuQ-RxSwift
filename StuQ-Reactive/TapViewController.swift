@@ -26,11 +26,12 @@ class TapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         button.addTarget(self, action: #selector(TapViewController.buttonTap), forControlEvents: .TouchUpInside)
-        
+
         rxButton
             .rx_tap
             .map { return 1 }
             .scan(0, accumulator: +)
+//            .startWith(0)
             .subscribeNext { (count) in
                 print(count)
                 self.rxLabel.text = "\(count)"
