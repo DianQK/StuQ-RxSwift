@@ -17,8 +17,8 @@ class TapViewController: UIViewController {
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var rxLabel: UILabel!
 
-    @IBOutlet weak var reset: UIButton!
-    @IBOutlet weak var rxReset: UIButton!
+    @IBOutlet private weak var reset: UIButton!
+    @IBOutlet private weak var rxReset: UIButton!
 
     private var tapCount: Int = 0
     private let disposeBag = DisposeBag()
@@ -29,6 +29,27 @@ class TapViewController: UIViewController {
 
         // 使用 button reset 两个空间完整对 button 点击次数的计算，reset 会将次数归零
         // 使用 RxSwift 再次完成上述需求
+        enum Action {
+            case add
+            case reset
+        }
+        
+        [
+            rxButton.rx_tap.map { Action.add },
+            rxReset.rx_tap.map { Action.reset }
+            ]
+            .toObservable()
+            .merge()
+            .scan(0) { (acc, x) in
+                switch x {
+                case .add: return acc + 1
+                case .reset: return 0
+                }
+            }
+            .startWith(0)
+            .map(String.init)
+            .bindTo(rxLabel.rx_text)
+            .addDisposableTo(disposeBag)
 
     }
 
@@ -43,3 +64,5 @@ class TapViewController: UIViewController {
     }
 
 }
+
+

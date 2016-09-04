@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="N5B-hm-SwC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="N5B-hm-SwC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -249,17 +249,25 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFV-Rs-iBE">
-                                                    <rect key="frame" x="290.5" y="13" width="9.5" height="18"/>
+                                                    <rect key="frame" x="290" y="13" width="9.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.17254902420000001" green="0.18823529780000001" blue="0.21960784489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyD-1h-Mex">
+                                                    <rect key="frame" x="267" y="13" width="18.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.17254902420000001" green="0.18823529780000001" blue="0.21960784489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="sFV-Rs-iBE" firstAttribute="leading" secondItem="JyD-1h-Mex" secondAttribute="trailing" constant="5" id="6Zg-kw-3Tb"/>
                                                 <constraint firstItem="sFV-Rs-iBE" firstAttribute="centerY" secondItem="GI0-KR-xQa" secondAttribute="centerY" id="XrL-C0-8Q9"/>
                                                 <constraint firstItem="eoV-qS-jdE" firstAttribute="centerY" secondItem="GI0-KR-xQa" secondAttribute="centerY" id="mPD-4C-geC"/>
                                                 <constraint firstAttribute="trailing" secondItem="sFV-Rs-iBE" secondAttribute="trailing" constant="20" id="nz7-bp-fK9"/>
                                                 <constraint firstItem="eoV-qS-jdE" firstAttribute="leading" secondItem="GI0-KR-xQa" secondAttribute="leading" constant="20" id="urm-NO-D1h"/>
+                                                <constraint firstItem="JyD-1h-Mex" firstAttribute="centerY" secondItem="GI0-KR-xQa" secondAttribute="centerY" id="xTM-Ih-soE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
