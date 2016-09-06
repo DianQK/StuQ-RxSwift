@@ -15,6 +15,8 @@
 		260443B31D71F1F300BFEA47 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260443B11D71F1F300BFEA47 /* RxSwift.framework */; };
 		260443B41D71F1F300BFEA47 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260443B21D71F1F300BFEA47 /* RxCocoa.framework */; };
 		260443B81D71F8B300BFEA47 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260443B71D71F8B300BFEA47 /* SnapKit.framework */; };
+		2612714E1D7DD63800686953 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2612714D1D7DD63800686953 /* Alamofire.framework */; };
+		265BA6101D7DD7B1009F35F0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265BA60F1D7DD7B1009F35F0 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		260443B11D71F1F300BFEA47 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		260443B21D71F1F300BFEA47 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		260443B71D71F8B300BFEA47 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		2612714D1D7DD63800686953 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		265BA60F1D7DD7B1009F35F0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265BA6101D7DD7B1009F35F0 /* SwiftyJSON.framework in Frameworks */,
+				2612714E1D7DD63800686953 /* Alamofire.framework in Frameworks */,
 				260443B81D71F8B300BFEA47 /* SnapKit.framework in Frameworks */,
 				260443B31D71F1F300BFEA47 /* RxSwift.framework in Frameworks */,
 				260443B41D71F1F300BFEA47 /* RxCocoa.framework in Frameworks */,
@@ -47,6 +53,8 @@
 		260443931D71F15300BFEA47 = {
 			isa = PBXGroup;
 			children = (
+				265BA60F1D7DD7B1009F35F0 /* SwiftyJSON.framework */,
+				2612714D1D7DD63800686953 /* Alamofire.framework */,
 				260443B71D71F8B300BFEA47 /* SnapKit.framework */,
 				260443B11D71F1F300BFEA47 /* RxSwift.framework */,
 				260443B21D71F1F300BFEA47 /* RxCocoa.framework */,
@@ -153,6 +161,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);

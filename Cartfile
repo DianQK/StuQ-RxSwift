@@ -1,2 +1,5 @@
 github "ReactiveX/RxSwift" ~>2.0
 github "SnapKit/SnapKit" ~>0.22
+github "Alamofire/Alamofire" ~>3.4
+github "SwiftyJSON/SwiftyJSON" "master"
+github "jdg/MBProgressHUD" ~>1.0

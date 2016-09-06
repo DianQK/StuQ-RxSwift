@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="N5B-hm-SwC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="N5B-hm-SwC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,7 +8,6 @@
         <!--Navigation Controller-->
         <scene sceneID="QOK-jr-pZc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FVI-c8-pgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="N5B-hm-SwC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KQl-Ms-0K2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -18,6 +17,7 @@
                         <segue destination="n2D-YI-EyB" kind="relationship" relationship="rootViewController" id="cMZ-mT-MUp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVI-c8-pgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-274.13333333333333" y="300.09333333333331"/>
         </scene>
@@ -32,9 +32,39 @@
                     <view key="view" contentMode="scaleToFill" id="jeC-tI-9Mt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="v7I-Uc-mXI">
+                                <rect key="frame" x="30" y="225" width="260" height="118"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IsM-Cw-Un5">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ov9-MC-5V9"/>
+                                        </constraints>
+                                        <state key="normal" title="Button1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErJ-3b-V52">
+                                        <rect key="frame" x="0.0" y="74" width="260" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Qlh-OH-RpU"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v7I-Uc-mXI" firstAttribute="leading" secondItem="jeC-tI-9Mt" secondAttribute="leading" constant="30" id="XMx-ZK-4Fw"/>
+                            <constraint firstAttribute="trailing" secondItem="v7I-Uc-mXI" secondAttribute="trailing" constant="30" id="hOi-o2-kiq"/>
+                            <constraint firstItem="v7I-Uc-mXI" firstAttribute="centerY" secondItem="jeC-tI-9Mt" secondAttribute="centerY" id="umx-mY-uUi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bez-i1-Bem"/>
+                    <connections>
+                        <outlet property="button1" destination="IsM-Cw-Un5" id="5Z2-Us-dWb"/>
+                        <outlet property="button2" destination="ErJ-3b-V52" id="o4M-ts-V4q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbt-7x-JwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

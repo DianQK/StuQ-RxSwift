@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" "3.4.2"
+github "jdg/MBProgressHUD" "1.0.0"
+github "ReactiveX/RxSwift" "2.6.0"
+github "SnapKit/SnapKit" "0.22.0"
+github "SwiftyJSON/SwiftyJSON" "73670b94292b8d8496c398a973f56ac67789ba9f"
