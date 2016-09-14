@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hke-oq-J3k">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vbr-Gp-7S7">
+            <objects>
+                <navigationController id="hke-oq-J3k" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ycS-Zl-SCO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YPK-1D-gyH" kind="relationship" relationship="rootViewController" id="Qyb-KL-PdK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKO-9m-rKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="374"/>
+        </scene>
+        <!--Refresh-->
+        <scene sceneID="2VN-Eu-Wb6">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" automaticallyAdjustsScrollViewInsets="NO" id="YPK-1D-gyH" customClass="ViewController" customModule="Refresh" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ota-tQ-Z6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="Utf-3O-UJa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nwd-JA-CWy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="268" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-mv-WNv">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" rowHeight="300" id="7l8-al-rMa" customClass="ImageTableViewCell" customModule="Refresh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7l8-al-rMa" id="b3m-6e-wdl">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eDU-Vq-280">
+                                                    <rect key="frame" x="15" y="15" width="570" height="269.5"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eDU-Vq-280" firstAttribute="leading" secondItem="b3m-6e-wdl" secondAttribute="leading" constant="15" id="4qd-00-hA0"/>
+                                                <constraint firstItem="eDU-Vq-280" firstAttribute="top" secondItem="b3m-6e-wdl" secondAttribute="top" constant="15" id="Ddp-F6-hwj"/>
+                                                <constraint firstAttribute="trailing" secondItem="eDU-Vq-280" secondAttribute="trailing" constant="15" id="ea6-WZ-Mwf"/>
+                                                <constraint firstAttribute="bottom" secondItem="eDU-Vq-280" secondAttribute="bottom" constant="15" id="qhV-zN-LHQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="meiziImageView" destination="eDU-Vq-280" id="275-Iq-i7F"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gip-mv-WNv" firstAttribute="leading" secondItem="nwd-JA-CWy" secondAttribute="leading" id="T0l-PH-J7s"/>
+                            <constraint firstItem="Gip-mv-WNv" firstAttribute="top" secondItem="Ota-tQ-Z6V" secondAttribute="bottom" id="biq-QC-PpN"/>
+                            <constraint firstItem="Utf-3O-UJa" firstAttribute="top" secondItem="Gip-mv-WNv" secondAttribute="bottom" id="c8H-5q-cQh"/>
+                            <constraint firstAttribute="trailing" secondItem="Gip-mv-WNv" secondAttribute="trailing" id="tfA-YE-nHc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Refresh" id="X0f-cP-GgM"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gip-mv-WNv" id="0ix-7q-rs2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVp-FA-vYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="374"/>
+        </scene>
+    </scenes>
+</document>
