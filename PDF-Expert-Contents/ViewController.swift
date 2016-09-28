@@ -14,7 +14,7 @@ import SwiftyJSON
 import SafariServices
 import RxExtensions
 
-typealias ContentsSectionModel = AnimatableSectionModel<String, ContentItem>
+typealias ContentsSectionModel = AnimatableSectionModel<String, ExpandableItem>
 
 class ViewController: UIViewController {
 
@@ -33,28 +33,31 @@ class ViewController: UIViewController {
             .map { try! Data(resource: $0) }
             .map { JSON(data: $0) }
             .map { json -> [ExpandableItem] in
-                json.arrayValue.map(ExpandableItem.init)
+                json.arrayValue.map {
+                    ExpandableItem.createExpandableItem(json: $0, withPreLevel: -1)
+                }
             }
+            .share()
 
         let result = expandableItems
             .map { (items: [ExpandableItem]) in
                 items.map { item in
-                    Observable.combineLatest(Observable.just([ContentItem.expand(item)]), item.subItems.map { $0.map(ContentItem.index) }, resultSelector: +)
+                    Observable.combineLatest(Observable.just([item]), item.subItems, resultSelector: +)
                 }
             }
-            .flatMap { (items: [Observable<[ContentItem]>]) -> Observable<[ContentItem]> in
+            .flatMap { (items: [Observable<[ExpandableItem]>]) -> Observable<[ExpandableItem]> in
                 guard let first = items.first else { return Observable.empty() }
                 return items.dropFirst().reduce(first) { acc, x in
                     Observable.combineLatest(acc, x, resultSelector: +)
                 }
             }
             .map { [ContentsSectionModel(model: "", items: $0)] }
+            .shareReplay(1)
 
         result
             .observeOn(MainScheduler.instance)
             .bindTo(contentsTableView.rx.items(dataSource: dataSource))
             .addDisposableTo(rx.disposeBag)
-
 
         do {
             contentsTableView.rowHeight = UITableViewAutomaticDimension
@@ -70,49 +73,38 @@ class ViewController: UIViewController {
             dataSource.configureCell = { dataSource, tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.expandedCell, for: indexPath)!
 
-                switch item {
-                case let .expand(item):
-                    let font = UIFont.boldSystemFont(ofSize: 17)
-                    let paragraphStyle = NSMutableParagraphStyle()
-                    paragraphStyle.firstLineHeadIndent = 0
-                    paragraphStyle.headIndent = 0
-                    let attributeString = NSAttributedString(string: item.title, attributes: [
-                        NSParagraphStyleAttributeName: paragraphStyle,
-                        NSFontAttributeName: font
-                        ])
-                    cell.attributedText = attributeString
-                    cell.canExpanded = true
+                let headIndent = CGFloat(item.level * 15)
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.firstLineHeadIndent = headIndent
+                paragraphStyle.headIndent = headIndent
+                let font = item.canExpanded ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 17)
+                let attributeString = NSAttributedString(string: item.title, attributes: [
+                    NSParagraphStyleAttributeName: paragraphStyle,
+                    NSFontAttributeName: font
+                    ])
+
+                cell.attributedText = attributeString
+                cell.canExpanded = item.canExpanded
+                cell.level = item.level
+                if item.canExpanded {
                     item.isExpanded.asObservable()
                         .bindTo(cell.rx.isExpanded)
                         .addDisposableTo(cell.disposeBag)
-                case let .index(item):
-                    let font = UIFont.systemFont(ofSize: 17)
-                    let paragraphStyle = NSMutableParagraphStyle()
-                    paragraphStyle.firstLineHeadIndent = 15
-                    paragraphStyle.headIndent = 15
-                    let attributeString = NSAttributedString(string: item.title, attributes: [
-                        NSParagraphStyleAttributeName: paragraphStyle,
-                        NSFontAttributeName: font
-                        ])
-                    cell.attributedText = attributeString
-                    cell.canExpanded = false
                 }
                 return cell
             }
         }
 
         do {
-            contentsTableView.rx.modelSelected(ContentItem.self)
+            contentsTableView.rx.modelSelected(ExpandableItem.self)
                 .subscribe(onNext: { [unowned self] item in
-                    switch item {
-                    case let .expand(item):
+                    if item.canExpanded {
                         item.isExpanded.value = !item.isExpanded.value
-                    case let .index(item):
-                        let sf = SFSafariViewController(url: item.url)
+                    } else if let url = item.url {
+                        let sf = SFSafariViewController(url: url)
                         sf.preferredControlTintColor = UIColor.black
                         self.present(sf, animated: true, completion: nil)
                     }
-
                 })
                 .addDisposableTo(rx.disposeBag)
 

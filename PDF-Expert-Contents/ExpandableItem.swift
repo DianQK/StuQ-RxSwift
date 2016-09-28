@@ -39,72 +39,74 @@ extension IdentifiableType where Self: IDHashable {
     }
 }
 
-enum ContentItem: IDHashable, IdentifiableType {
-    case index(IndexItem)
-    case expand(ExpandableItem)
-
-    var id: Int64 {
-        switch self {
-        case let .index(item):
-            return item.id
-        case let .expand(item):
-            return item.id
-        }
-    }
-}
-
-struct IndexItem: IDHashable, IdentifiableType {
-    let id: Int64
-    let title: String
-    let url: URL
-
-    init(id: Int64, title: String, url: URL) {
-        self.id = id
-        self.title = title
-        self.url = url
-    }
-
-    init(json: JSON) {
-        self.id = json["id"].int64Value
-        self.title = json["title"].stringValue
-        self.url = json["url"].URL!
-    }
-}
+import Foundation
+import RxSwift
+import RxCocoa
+import RxDataSources
+import SwiftyJSON
 
 struct ExpandableItem: IDHashable, IdentifiableType {
 
     let id: Int64
     let title: String
+    let level: Int
+    let url: URL?
 
     let isExpanded: Variable<Bool>
-    let _subItems: Variable<[IndexItem]> = Variable([])
+    private let _subItems: Variable<[ExpandableItem]> = Variable([])
+    let canExpanded: Bool
     private let disposeBag = DisposeBag()
 
-    var subItems: Observable<[IndexItem]> {
+    var subItems: Observable<[ExpandableItem]> {
         return self._subItems.asObservable()
     }
-    
-    init(id: Int64, title: String, isExpanded: Bool, subItems: [IndexItem]) {
+
+    init(id: Int64, title: String, level: Int, url: URL?, isExpanded: Bool, subItems: [ExpandableItem]) {
         self.id = id
         self.title = title
+        self.level = level
+        self.url = url
 
-        self.isExpanded = Variable(isExpanded)
+        self.canExpanded = !subItems.isEmpty
+        if self.canExpanded {
 
-        self.isExpanded.asObservable()
-            .map { isExpanded in
-                isExpanded ? subItems : []
-            }
-            .bindTo(_subItems)
-            .addDisposableTo(disposeBag)
+            self.isExpanded = Variable(isExpanded)
+
+            self.isExpanded.asObservable()
+                .map { isExpanded in
+                    isExpanded ? subItems : []
+                }
+                .flatMap(combineSubItems)
+                .bindTo(_subItems)
+                .addDisposableTo(disposeBag)
+
+        } else {
+            self.isExpanded = Variable(false)
+        }
+
     }
 
-    init(json: JSON) {
-        let id = json["id"].int64Value
-        let title = json["title"].stringValue
-        let isExpanded = false
-        let subItems = json["subdirectory"].arrayValue.map(IndexItem.init)
+    let combineSubItems: (_ subItems: [ExpandableItem]) -> Observable<[ExpandableItem]> = { subItems in
+        return subItems.reduce(Observable<[ExpandableItem]>.just([])) { (acc, x) in
+            Observable.combineLatest(acc, Observable.just([x]), x._subItems.asObservable(), resultSelector: { $0 + $1 + $2 })
+        }
+    }
 
-        self.init(id: id, title: title, isExpanded: isExpanded, subItems: subItems)
+    static func createExpandableItem(json: JSON, withPreLevel preLevel: Int) -> ExpandableItem {
+        let title = json["title"].stringValue
+        let id = json["id"].int64Value
+        let url = URL(string: json["url"].stringValue)
+
+        let level = preLevel + 1
+
+        let subItems: [ExpandableItem]
+
+        if let subJSON = json["subdirectory"].array, !subJSON.isEmpty {
+            subItems = subJSON.map { createExpandableItem(json: $0, withPreLevel: level) }
+        } else {
+            subItems = []
+        }
+        return ExpandableItem(id: id, title: title, level: level, url: url, isExpanded: false, subItems: subItems)
     }
 
 }

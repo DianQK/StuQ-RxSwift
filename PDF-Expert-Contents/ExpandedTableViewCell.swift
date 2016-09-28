@@ -60,14 +60,6 @@ class ExpandedTableViewCell: UITableViewCell {
     var canExpanded: Bool = false {
         didSet {
             expandMarkImageView.isHidden = !canExpanded
-            switch canExpanded {
-            case true:
-                let left: CGFloat = 15 + 15 + 10
-                separatorInset = UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0)
-            case false:
-                let left: CGFloat = 15 + 15 + 15 + 10
-                separatorInset = UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0)
-            }
         }
     }
 
