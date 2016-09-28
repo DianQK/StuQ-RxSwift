@@ -58,11 +58,17 @@ struct ExpandableItem<Model: IdentifiableType & Hashable> {
 
             self.isExpanded = Variable(isExpanded)
 
+            let displaySubItems = Variable<[ExpandableItem]>([])
+            // 一次绑定
+            _subItems.asObservable().filter { !$0.isEmpty }.bindTo(displaySubItems).addDisposableTo(disposeBag)
+            // 1. combine
+            combineSubItems(subItems).asObservable().bindTo(_subItems).addDisposableTo(disposeBag)
+            // 2. handle expand
+            // 不要交换 1 2 的顺序
             self.isExpanded.asObservable()
                 .map { isExpanded in
-                    isExpanded ? subItems : []
+                    isExpanded ? displaySubItems.value : []
                 }
-                .flatMap(combineSubItems)
                 .bindTo(_subItems)
                 .addDisposableTo(disposeBag)
 
