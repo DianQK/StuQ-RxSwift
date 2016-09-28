@@ -25,6 +25,7 @@
 		2643AB1E1D8C7BDF0049006F /* ExpandableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AB1D1D8C7BDF0049006F /* ExpandableItem.swift */; };
 		2643AB341D8CE28D0049006F /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AB331D8CE28D0049006F /* R.generated.swift */; };
 		2643AB361D8CE2AF0049006F /* ExpandedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2643AB351D8CE2AF0049006F /* ExpandedTableViewCell.swift */; };
+		26A311E21D9B51240033F710 /* ContentItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A311E11D9B51240033F710 /* ContentItemModel.swift */; };
 		26C2C3AA1D9542950008D16D /* contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C2C3A91D9542950008D16D /* contents.json */; };
 		26C2C3AC1D9542CA0008D16D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C2C3AB1D9542CA0008D16D /* SwiftyJSON.framework */; };
 		26C2C3AD1D9542CA0008D16D /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C2C3AB1D9542CA0008D16D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -65,6 +66,7 @@
 		2643AB331D8CE28D0049006F /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		2643AB351D8CE2AF0049006F /* ExpandedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedTableViewCell.swift; sourceTree = "<group>"; };
 		26A311DC1D9ADC530033F710 /* PDF-Expert-Contents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PDF-Expert-Contents.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A311E11D9B51240033F710 /* ContentItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentItemModel.swift; sourceTree = "<group>"; };
 		26C2C3A91D9542950008D16D /* contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contents.json; sourceTree = "<group>"; };
 		26C2C3AB1D9542CA0008D16D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				2643AB011D8C7B8D0049006F /* Assets.xcassets */,
 				2643AB031D8C7B8D0049006F /* LaunchScreen.storyboard */,
 				2643AB061D8C7B8D0049006F /* Info.plist */,
+				26A311E11D9B51240033F710 /* ContentItemModel.swift */,
 				2643AB1D1D8C7BDF0049006F /* ExpandableItem.swift */,
 				2643AB351D8CE2AF0049006F /* ExpandedTableViewCell.swift */,
 			);
@@ -202,6 +205,7 @@
 			files = (
 				2643AB1E1D8C7BDF0049006F /* ExpandableItem.swift in Sources */,
 				2643AAFD1D8C7B8D0049006F /* ViewController.swift in Sources */,
+				26A311E21D9B51240033F710 /* ContentItemModel.swift in Sources */,
 				2643AAFB1D8C7B8D0049006F /* AppDelegate.swift in Sources */,
 				2643AB341D8CE28D0049006F /* R.generated.swift in Sources */,
 				2643AB361D8CE2AF0049006F /* ExpandedTableViewCell.swift in Sources */,

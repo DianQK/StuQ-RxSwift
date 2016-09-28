@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxDataSources
-import SwiftyJSON
 
 protocol IDHashable: Hashable {
     associatedtype ID: Hashable
@@ -39,19 +38,9 @@ extension IdentifiableType where Self: IDHashable {
     }
 }
 
-import Foundation
-import RxSwift
-import RxCocoa
-import RxDataSources
-import SwiftyJSON
+struct ExpandableItem<Model: IdentifiableType & Hashable> {
 
-struct ExpandableItem: IDHashable, IdentifiableType {
-
-    let id: Int64
-    let title: String
-    let level: Int
-    let url: URL?
-
+    let model: Model
     let isExpanded: Variable<Bool>
     private let _subItems: Variable<[ExpandableItem]> = Variable([])
     let canExpanded: Bool
@@ -60,12 +49,9 @@ struct ExpandableItem: IDHashable, IdentifiableType {
     var subItems: Observable<[ExpandableItem]> {
         return self._subItems.asObservable()
     }
-
-    init(id: Int64, title: String, level: Int, url: URL?, isExpanded: Bool, subItems: [ExpandableItem]) {
-        self.id = id
-        self.title = title
-        self.level = level
-        self.url = url
+    
+    init(model: Model, isExpanded: Bool, subItems: [ExpandableItem]) {
+        self.model = model
 
         self.canExpanded = !subItems.isEmpty
         if self.canExpanded {
@@ -84,6 +70,7 @@ struct ExpandableItem: IDHashable, IdentifiableType {
             self.isExpanded = Variable(false)
         }
 
+
     }
 
     let combineSubItems: (_ subItems: [ExpandableItem]) -> Observable<[ExpandableItem]> = { subItems in
@@ -92,21 +79,27 @@ struct ExpandableItem: IDHashable, IdentifiableType {
         }
     }
 
-    static func createExpandableItem(json: JSON, withPreLevel preLevel: Int) -> ExpandableItem {
-        let title = json["title"].stringValue
-        let id = json["id"].int64Value
-        let url = URL(string: json["url"].stringValue)
+}
 
-        let level = preLevel + 1
+extension ExpandableItem: IdentifiableType, Equatable, Hashable {
+    /// Returns a Boolean value indicating whether two values are equal.
+    ///
+    /// Equality is the inverse of inequality. For any values `a` and `b`,
+    /// `a == b` implies that `a != b` is `false`.
+    ///
+    /// - Parameters:
+    ///   - lhs: A value to compare.
+    ///   - rhs: Another value to compare.
+    public static func ==(lhs: ExpandableItem, rhs: ExpandableItem) -> Bool {
+        return lhs.model == rhs.model
+    }
 
-        let subItems: [ExpandableItem]
+    var hashValue: Int {
+        return model.hashValue
+    }
 
-        if let subJSON = json["subdirectory"].array, !subJSON.isEmpty {
-            subItems = subJSON.map { createExpandableItem(json: $0, withPreLevel: level) }
-        } else {
-            subItems = []
-        }
-        return ExpandableItem(id: id, title: title, level: level, url: url, isExpanded: false, subItems: subItems)
+    var identity: Model.Identity {
+        return model.identity
     }
 
 }

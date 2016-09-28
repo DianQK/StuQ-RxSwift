@@ -14,7 +14,7 @@ import SwiftyJSON
 import SafariServices
 import RxExtensions
 
-typealias ContentsSectionModel = AnimatableSectionModel<String, ExpandableItem>
+typealias ContentsSectionModel = AnimatableSectionModel<String, ExpandableContentItemModel>
 
 class ViewController: UIViewController {
 
@@ -32,20 +32,20 @@ class ViewController: UIViewController {
         let expandableItems = fetch
             .map { try! Data(resource: $0) }
             .map { JSON(data: $0) }
-            .map { json -> [ExpandableItem] in
+            .map { json -> [ExpandableContentItemModel] in
                 json.arrayValue.map {
-                    ExpandableItem.createExpandableItem(json: $0, withPreLevel: -1)
+                    ContentItemModel.createExpandableContentItemModel(json: $0, withPreLevel: -1)
                 }
             }
             .share()
 
         let result = expandableItems
-            .map { (items: [ExpandableItem]) in
+            .map { (items: [ExpandableContentItemModel]) in
                 items.map { item in
                     Observable.combineLatest(Observable.just([item]), item.subItems, resultSelector: +)
                 }
             }
-            .flatMap { (items: [Observable<[ExpandableItem]>]) -> Observable<[ExpandableItem]> in
+            .flatMap { (items: [Observable<[ExpandableContentItemModel]>]) -> Observable<[ExpandableContentItemModel]> in
                 guard let first = items.first else { return Observable.empty() }
                 return items.dropFirst().reduce(first) { acc, x in
                     Observable.combineLatest(acc, x, resultSelector: +)
@@ -73,19 +73,19 @@ class ViewController: UIViewController {
             dataSource.configureCell = { dataSource, tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.expandedCell, for: indexPath)!
 
-                let headIndent = CGFloat(item.level * 15)
+                let headIndent = CGFloat(item.model.level * 15)
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.firstLineHeadIndent = headIndent
                 paragraphStyle.headIndent = headIndent
                 let font = item.canExpanded ? UIFont.boldSystemFont(ofSize: 17) : UIFont.systemFont(ofSize: 17)
-                let attributeString = NSAttributedString(string: item.title, attributes: [
+                let attributeString = NSAttributedString(string: item.model.title, attributes: [
                     NSParagraphStyleAttributeName: paragraphStyle,
                     NSFontAttributeName: font
                     ])
 
                 cell.attributedText = attributeString
                 cell.canExpanded = item.canExpanded
-                cell.level = item.level
+                cell.level = item.model.level
                 if item.canExpanded {
                     item.isExpanded.asObservable()
                         .bindTo(cell.rx.isExpanded)
@@ -96,11 +96,11 @@ class ViewController: UIViewController {
         }
 
         do {
-            contentsTableView.rx.modelSelected(ExpandableItem.self)
+            contentsTableView.rx.modelSelected(ExpandableContentItemModel.self)
                 .subscribe(onNext: { [unowned self] item in
                     if item.canExpanded {
                         item.isExpanded.value = !item.isExpanded.value
-                    } else if let url = item.url {
+                    } else if let url = item.model.url {
                         let sf = SFSafariViewController(url: url)
                         sf.preferredControlTintColor = UIColor.black
                         self.present(sf, animated: true, completion: nil)
