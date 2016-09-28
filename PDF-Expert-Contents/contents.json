@@ -1,0 +1,511 @@
+[
+  {
+    "id": 1000000,
+    "title": "Get started in Xcode",
+    "subdirectory": [
+      {
+        "id": 1000100,
+        "title": "Xcode overview",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devc8c2a6be1"
+      },
+      {
+        "id": 1000200,
+        "title": "Create a project",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev07db0e578"
+      },
+      {
+        "id": 1000300,
+        "title": "Run apps in Simulator",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev2809b6cff"
+      },
+      {
+        "id": 1000400,
+        "title": "Create the UI",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev1a26b4fb4"
+      },
+      {
+        "id": 1000500,
+        "title": "Write code",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devc4ecaf4e9"
+      },
+      {
+        "id": 1000600,
+        "title": "Debug code",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev17c8b1d50"
+      },
+      {
+        "id": 1000700,
+        "title": "Use source control",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev6188033ec"
+      }
+    ]
+  },
+  {
+    "id": 1020000,
+    "title": "Customize Xcode",
+    "subdirectory": [
+      {
+        "id": 1020100,
+        "title": "Manage general settings",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev9d00ebc70"
+      },
+      {
+        "id": 1020200,
+        "title": "Add accounts, servers, and repositories",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devc6700ab7d"
+      },
+      {
+        "id": 1020300,
+        "title": "Configure actions for events",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devb4d6e8810"
+      },
+      {
+        "id": 1020400,
+        "title": "Configure how files are displayed",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev02ea29e68"
+      },
+      {
+        "id": 1020500,
+        "title": "Manage fonts and colors",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev0125622ec"
+      },
+      {
+        "id": 1020600,
+        "title": "Configure code editing end indentation",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev8669bf801"
+      },
+      {
+        "id": 1020700,
+        "title": "Customize keyboad shortcuts",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devcaba3b7d4"
+      },
+      {
+        "id": 1020800,
+        "title": "Configure source control",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev7ef1e7406"
+      },
+      {
+        "id": 1021000,
+        "title": "Specify locations of project files",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/deva52afe8a4"
+      },
+    ]
+  },
+  {
+    "id": 1030000,
+    "title": "Use playgrounds",
+    "subdirectory": [
+      {
+        "id": 1030100,
+        "title": "Create, edit, and execute",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev188e45167"
+      },
+      {
+        "id": 1030200,
+        "title": "Add auxiliary code",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devfa5bea3af"
+      },
+      {
+        "id": 1030300,
+        "title": "Add resources",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev5516dfe72"
+      },
+      {
+        "id": 1030400,
+        "title": "Use rich comments",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev113294b84"
+      },
+      {
+        "id": 1030500,
+        "title": "Add pages",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev53d8265e4"
+      },
+      {
+        "id": 1030600,
+        "title": "View detailed result",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devab506297c"
+      },
+      {
+        "id": 1030700,
+        "title": "Add a live view",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev5d9411fd2"
+      },
+      {
+        "id": 1030800,
+        "title": "Add a literal",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev4c60242fc"
+      }
+    ]
+  },
+  {
+    "id": 1040000,
+    "title": "Register devices",
+    "subdirectory": [
+      {
+        "id": 1040100,
+        "title": "Signing workflow",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev60b6fbbc7"
+      },
+      {
+        "id": 1040200,
+        "title": "Add an Apple ID",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devaf282080a"
+      },
+      {
+        "id": 1040300,
+        "title": "Assign a project to a team",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev23aab79b4"
+      },
+      {
+        "id": 1040400,
+        "title": "Launch an app on a device",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev5a825a1ca"
+      },
+      {
+        "id": 1040500,
+        "title": "View signing reports",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev0374d3ec9"
+      },
+      {
+        "id": 1040600,
+        "title": "Manually sign apps",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev1bf96f17e"
+      }
+    ]
+  },
+  {
+    "id": 1050000,
+    "title": "Edit source code",
+    "subdirectory": [
+      {
+        "id": 1050300,
+        "title": "View symbol declarations and reference",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev887b0e079"
+      },
+      {
+        "id": 1050400,
+        "title": "Analyze your code",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devb7babe820"
+      },
+      {
+        "id": 1050500,
+        "title": "Create and use code snippets",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev2b24f6f93"
+      },
+      {
+        "id": 1050600,
+        "title": "Switch syntax coloring styles",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev1a32e6d0b"
+      }
+    ]
+  },
+  {
+    "id": 1070000,
+    "title": "Work with assets",
+    "subdirectory": [
+      {
+        "id": 1070100,
+        "title": "Asset catalogs",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev10510b1f7"
+      },
+      {
+        "id": 1070200,
+        "title": "Create texture atlases",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev0bfaf1ab7"
+      },
+      {
+        "id": 1070300,
+        "title": "SceneKit scene editor",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev1a54b0123"
+      },
+      {
+        "id": 1070400,
+        "title": "Preview 3D scenes",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devaef24a865"
+      },
+      {
+        "id": 1070500,
+        "title": "Add a resizable area to an image",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/deve65bd8d0d"
+      }
+    ]
+  },
+  {
+    "id": 1080000,
+    "title": "Run and debug",
+    "subdirectory": [
+      {
+        "id": 1080100,
+        "title": "Debug area overview",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devda5478599"
+      },
+      {
+        "id": 1080300,
+        "title": "View threads",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev08af4c50f"
+      },
+      {
+        "id": 1080400,
+        "title": "View variables",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev9de24d52b"
+      },
+      {
+        "id": 1080500,
+        "title": "Inspect variables in the editor",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev01d33c3bd"
+      },
+      {
+        "id": 1080600,
+        "title": "Examine threads and stacks",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devea99126aa"
+      },
+      {
+        "id": 1080700,
+        "title": "Monitor an app using gauges",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev94c128b7b"
+      },
+      {
+        "id": 1080800,
+        "title": "Run an app with diagnostics",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devcef23c572"
+      },
+      {
+        "id": 1080900,
+        "title": "View logs and reports",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev21d56ecd4"
+      },
+      {
+        "id": 1081000,
+        "title": "View and address issues",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev88d75d488"
+      }
+    ]
+  },
+  {
+    "id": 1090000,
+    "title": "Test code",
+    "subdirectory": [
+      {
+        "id": 1090100,
+        "title": "Test code",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev42b289fbc"
+      },
+      {
+        "id": 1090200,
+        "title": "Add a test class",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devd3b1da4c4"
+      },
+      {
+        "id": 1090300,
+        "title": "Add a test target",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev2ea31ea57"
+      },
+      {
+        "id": 1090400,
+        "title": "View test failures",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev084ed616b"
+      },
+      {
+        "id": 1090500,
+        "title": "Manage performance tests",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devc49643a5f"
+      },
+      {
+        "id": 1090600,
+        "title": "Enable code coverage",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev9e0e09978"
+      }
+    ]
+  },
+  {
+    "id": 1100000,
+    "title": "Configure capabilities",
+    "subdirectory": [
+      {
+        "id": 1100100,
+        "title": "Add a caoability",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev88ff319e7"
+      },
+      {
+        "id": 1100200,
+        "title": "Add iCloud services",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev52452c426"
+      },
+      {
+        "id": 1100300,
+        "title": "Manage iCloud containers",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devcae40ccb9"
+      }
+    ]
+  },
+  {
+    "id": 1120000,
+    "title": "Configure targets and builds",
+    "subdirectory": [
+      {
+        "id": 1120100,
+        "title": "Edit general target settings",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev0ac32bb34"
+      },
+      {
+        "id": 1120200,
+        "title": "Link to libraries and frameworks",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev51a648b07"
+      },
+      {
+        "id": 1120300,
+        "title": "Configure schemes",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev0bee46f46"
+      },
+      {
+        "id": 1120400,
+        "title": "Add, delete, rename, add share schemens",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev5426ddfcf"
+      },
+      {
+        "id": 1120500,
+        "title": "Build multiple targets",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev38419576c"
+      },
+      {
+        "id": 1120600,
+        "title": "Specify runtime arguments and environment variables",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev3ec8a1cb4"
+      },
+      {
+        "id": 1120700,
+        "title": "Profile an app",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devcc15e6912"
+      },
+      {
+        "id": 1120800,
+        "title": "Switch schemes and destinations",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev40e0a11aa"
+      }
+    ]
+  },
+  {
+    "id": 1130000,
+    "title": "Manage devices",
+    "subdirectory": [
+      {
+        "id": 1130100,
+        "title": "Locate a device identifier",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev93ef696c6"
+      },
+      {
+        "id": 1130200,
+        "title": "Install and uninstall apps",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devade83d1d7"
+      },
+      {
+        "id": 1130300,
+        "title": "Install a prerelease OS",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev397906f14"
+      },
+      {
+        "id": 1130400,
+        "title": "View device crash logs",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev85c64ec79"
+      },
+      {
+        "id": 1130500,
+        "title": "Manage app containers",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev816c242e1"
+      },
+      {
+        "id": 1130600,
+        "title": "Take a screenshot",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devfdace0ea8"
+      },
+      {
+        "id": 1130700,
+        "title": "Create a Simulator",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devf225e58da"
+      },
+      {
+        "id": 1130800,
+        "title": "Pair watch simulators",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devc98049be4"
+      },
+      {
+        "id": 1130900,
+        "title": "View paired watches",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev1016d4c7f"
+      }
+    ]
+  },
+  {
+    "id": 1140000,
+    "title": "Maintain signing assets",
+    "subdirectory": [
+      {
+        "id": 1140100,
+        "title": "Export developer accounts",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev8a2822e0b"
+      },
+      {
+        "id": 1140200,
+        "title": "Manage signing identities",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev154b28f09"
+      },
+      {
+        "id": 1140300,
+        "title": "Download provisioning profiles",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/deva899b4fe5"
+      },
+      {
+        "id": 1140400,
+        "title": "Manage profiles on devices",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devaafd622d2"
+      }
+    ]
+  },
+  {
+    "id": 1150000,
+    "title": "Manage source control",
+    "subdirectory": [
+      {
+        "id": 1150100,
+        "title": "Add a repository",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/deve306e855d"
+      },
+      {
+        "id": 1150200,
+        "title": "Add a server",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev01043b473"
+      },
+      {
+        "id": 1150300,
+        "title": "Compare file revisions",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev5ace8e9eb"
+      }
+    ]
+  },
+  {
+    "id": 1160000,
+    "title": "Archive and output products",
+    "subdirectory": [
+      {
+        "id": 1160100,
+        "title": "Archives organizer",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev1bc569500"
+      },
+      {
+        "id": 1160200,
+        "title": "Create an archive",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/devf37a1db04"
+      },
+      {
+        "id": 1160300,
+        "title": "Export an app",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev23ea8b877"
+      },
+      {
+        "id": 1160400,
+        "title": "Export a macOS app",
+        "url": "http://help.apple.com/xcode/mac/8.0/#/dev920940b13"
+      }
+    ]
+  }
+]

@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  StuQ-Reactive
+//  PDF-Expert-Contents
 //
-//  Created by DianQK on 8/28/16.
-//  Copyright © 2016 T. All rights reserved.
+//  Created by DianQK on 17/09/2016.
+//  Copyright © 2016 DianQK. All rights reserved.
 //
 
 import UIKit
@@ -14,4 +14,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 }
-
