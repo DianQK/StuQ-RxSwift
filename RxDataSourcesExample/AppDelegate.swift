@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  StuQ-Reactive
+//  RxDataSourcesExample
 //
-//  Created by DianQK on 8/28/16.
+//  Created by DianQK on 03/10/2016.
 //  Copyright © 2016 T. All rights reserved.
 //
 
@@ -14,4 +14,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 }
-

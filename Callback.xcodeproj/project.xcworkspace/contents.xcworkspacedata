@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:StuQ-Reactive.xcodeproj">
+      location = "self:Callback.xcodeproj">
    </FileRef>
 </Workspace>
