@@ -69,10 +69,7 @@ class PaymentTableViewCell: UITableViewCell {
 }
 
 extension Reactive where Base: PaymentTableViewCell {
-    var isSelectedPayment: AnyObserver<Bool> {
-//        UIBindingObserver(UIElement: base.selectButton) { (button, isSelect) in
-//
-//        }
+    var isSelectedPayment: UIBindingObserver<UIButton, Bool> {
         return base.selectButton.rx.selected
     }
 }

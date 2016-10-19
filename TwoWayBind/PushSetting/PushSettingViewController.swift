@@ -57,7 +57,7 @@ class PushSettingViewController: UIViewController {
 extension PushSettingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SelectTableViewHeaderFooterView.reuseIdentifier) as! SelectTableViewHeaderFooterView
-        let sectionModel = dataSource.sectionAtIndex(section).model
+        let sectionModel = dataSource[section].model
         header.name = sectionModel.category
 
         sectionModel.isSelectedAll.asObservable()
@@ -65,7 +65,7 @@ extension PushSettingViewController: UITableViewDelegate {
             .addDisposableTo(header.reusableDisposeBag)
 
         header.selectSwitchChangedAction = { [unowned self] isSelected in
-            self.dataSource.sectionAtIndex(section).items.forEach {
+            self.dataSource[section].items.forEach {
                 $0.isSelected.value = isSelected
             }
         }

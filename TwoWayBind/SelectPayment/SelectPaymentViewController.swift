@@ -84,7 +84,7 @@ class SelectPaymentViewController: UIViewController {
         dataSource.configureCell = { ds, tb, indexPath, payment in
             let cell = tb.dequeueReusableCell(withIdentifier: R.reuseIdentifier.paymentTableViewCell, for: indexPath)!
             cell.setPayment(payment)
-            let selectedPayment = ds.sectionAtIndex(indexPath.section).model.select.asObservable()
+            let selectedPayment = ds[indexPath.section].model.select.asObservable()
             selectedPayment
                 .map { $0 == payment }
                 .bindTo(cell.rx.isSelectedPayment)
